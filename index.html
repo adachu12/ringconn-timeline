@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///D:/user/Downloads/ringconn_timeline%20(1).html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RingConn公司全面发展历程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a237e;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .export-btn, .filter-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .export-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102,126,234,0.4);
+        }
+        .filter-btn {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1200px;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 3px solid #5568d3;
+        }
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+            vertical-align: top;
+        }
+        tr:hover {
+            background-color: #f8f9ff;
+            transform: scale(1.001);
+            transition: all 0.2s;
+        }
+        .date {
+            font-weight: 600;
+            color: #1a237e;
+            white-space: nowrap;
+            min-width: 100px;
+        }
+        .category {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .cat-founding { background: #e3f2fd; color: #1976d2; }
+        .cat-product { background: #f3e5f5; color: #7b1fa2; }
+        .cat-feature { background: #e8f5e9; color: #388e3c; }
+        .cat-funding { background: #fff3e0; color: #f57c00; }
+        .cat-award { background: #fce4ec; color: #c2185b; }
+        .cat-partnership { background: #e0f2f1; color: #00796b; }
+        .cat-exhibition { background: #fff9c4; color: #f57f17; }
+        .cat-team { background: #ede7f6; color: #512da8; }
+        .cat-milestone { background: #ffebee; color: #c62828; }
+        .cat-certification { background: #e1f5fe; color: #0277bd; }
+        .milestone {
+            font-weight: 600;
+            color: #c62828;
+        }
+        .reference {
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        .reference a {
+            color: #667eea;
+            text-decoration: none;
+            border-bottom: 1px dotted #667eea;
+            transition: all 0.2s;
+        }
+        .reference a:hover {
+            color: #764ba2;
+            border-bottom: 1px solid #764ba2;
+        }
+        .description {
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 RingConn 公司全面发展历程</h1>
+        <p class="subtitle">从智能戒指技术研发到全球领先品牌的完整记录</p>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" style="opacity: 1; transition: opacity 0.5s;">60+</div>
+                <div class="stat-label">重要事件</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="opacity: 1; transition: opacity 0.5s;">11年</div>
+                <div class="stat-label">发展历程</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="opacity: 1; transition: opacity 0.5s;">25万+</div>
+                <div class="stat-label">全球用户</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="opacity: 1; transition: opacity 0.5s;">80+</div>
+                <div class="stat-label">覆盖国家</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="export-btn" onclick="exportToCSV()">📥 导出完整数据(CSV)</button>
+            <button class="filter-btn active" onclick="filterCategory(&#39;all&#39;)">全部</button>
+            <button class="filter-btn" onclick="filterCategory(&#39;product&#39;)">产品发布</button>
+            <button class="filter-btn" onclick="filterCategory(&#39;feature&#39;)">功能更新</button>
+            <button class="filter-btn" onclick="filterCategory(&#39;partnership&#39;)">战略合作</button>
+            <button class="filter-btn" onclick="filterCategory(&#39;award&#39;)">荣誉奖项</button>
+            <button class="filter-btn" onclick="filterCategory(&#39;funding&#39;)">投融资</button>
+        </div>
+        
+        <div class="table-wrapper">
+            <table id="timeline-table">
+                <thead>
+                    <tr>
+                        <th style="width: 120px;">时间</th>
+                        <th style="width: 140px;">类别</th>
+                        <th style="width: 250px;">重要事件</th>
+                        <th>详细说明</th>
+                        <th style="width: 280px;">参考来源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-category="founding" style="">
+                        <td class="date">2014年</td>
+                        <td><span class="category cat-founding">研发启动</span></td>
+                        <td class="milestone">智能戒指技术研究启动</td>
+                        <td class="description">开始智能戒指技术的前期研发工作。研究由Dr. Guoxing Wang（时任上海交通大学教授，前IEEE生物医学电路与系统学会副主席）主导。至公司成立前，累计发表150+篇学术论文，获得4,000+次引用，申请20+项专利</td>
+                        <td class="reference"><a href="https://ringconn.com/pages/about-us" target="_blank">RingConn官网 - About Us</a></td>
+                    </tr>
+                    <tr data-category="founding" style="">
+                        <td class="date">2015年</td>
+                        <td><span class="category cat-founding">概念萌芽</span></td>
+                        <td>Dr. Wang构思戒指形态健康监测设备</td>
+                        <td class="description">基于在生物医学电路与系统领域数十年的经验，Dr. Guoxing Wang开始思考创建便携式生命体征监测设备，认为戒指可能是最佳解决方案</td>
+                        <td class="reference"><a href="https://ringconn.store/about/" target="_blank">RingConn About页面</a></td>
+                    </tr>
+                    <tr data-category="founding" style="">
+                        <td class="date">2020年</td>
+                        <td><span class="category cat-product">原型开发</span></td>
+                        <td class="milestone">首个产品原型完成</td>
+                        <td class="description">经过6年多的技术研发，Dr. Wang认为技术已经成熟，可以转化为实际产品。完成第一代智能戒指原型机开发</td>
+                        <td class="reference"><a href="https://ringconn.com/pages/about-us" target="_blank">RingConn官网 - About Us</a></td>
+                    </tr>
+                    <tr data-category="founding" style="">
+                        <td class="date">2021年</td>
+                        <td><span class="category cat-team">公司成立</span></td>
+                        <td class="milestone">RingConn LLC正式成立</td>
+                        <td class="description">三位博士联合创立公司：<br>
+                        • Dr. Guoxing Wang - 创始人兼董事长，前IEEE生物医学电路与系统学会副主席，上海交通大学教授<br>
+                        • Dr. Wu Hao (Tony) - CEO，人工智能专家<br>
+                        • Dr. Feng - 医学博士<br>
+                        总部位于美国特拉华州威明顿市。公司定位：无需订阅费的高精度健康追踪智能戒指</td>
+                        <td class="reference"><a href="https://www.linkedin.com/company/ringconn" target="_blank">RingConn LinkedIn官方页面</a>; <a href="https://canvasbusinessmodel.com/blogs/brief-history/ringconn-brief-history" target="_blank">CanvasBusinessModel完整历史</a></td>
+                    </tr>
+                    <tr data-category="product" style="">
+                        <td class="date">2022年11月</td>
+                        <td><span class="category cat-product">产品众筹</span></td>
+                        <td class="milestone">Gen 1在Indiegogo发布</td>
+                        <td class="description">首款产品RingConn Smart Ring Gen 1在Indiegogo平台开启众筹。产品特点：7天续航、IP68防水、9种尺寸、钛合金材质。早鸟价$149，零售价$249。无订阅费，包含便携充电盒（可充电18次）</td>
+                        <td class="reference"><a href="https://www.notebookcheck.net/RingConn-Oura-Ring-3-competitor-lands-on-Indiegogo-for-US-149.670285.0.html" target="_blank">NotebookCheck报道(2022-11-24)</a></td>
+                    </tr>
+                    <tr data-category="funding" style="">
+                        <td class="date">2022年12月</td>
+                        <td><span class="category cat-funding">众筹进展</span></td>
+                        <td>Indiegogo众筹超额完成</td>
+                        <td class="description">众筹活动进展顺利，超出原定目标近10,000%，显示市场对无订阅费智能戒指的强烈需求</td>
+                        <td class="reference"><a href="https://basic-tutorials.com/news/ringconn-smart-ring-with-long-runtime-on-indiegogo/" target="_blank">Basic Tutorials(2022-12-07)</a></td>
+                    </tr>
+                    <tr data-category="funding" style="">
+                        <td class="date">2023年1月</td>
+                        <td><span class="category cat-funding">众筹成功</span></td>
+                        <td class="milestone">Gen 1众筹圆满结束</td>
+                        <td class="description">Indiegogo众筹成功筹集$1,181,081，获得7,009名支持者。加上In-Demand延续期，总筹资额超过$130万。预计2023年2月开始发货</td>
+                        <td class="reference"><a href="https://gadgetsandwearables.com/2024/08/04/ringconn-gen-2-kickstarter/" target="_blank">Gadgets &amp; Wearables</a></td>
+                    </tr>
+                    <tr data-category="product" style="">
+                        <td class="date">2023年2-3月</td>
+                        <td><span class="category cat-product">产品交付</span></td>
+                        <td>Gen 1开始全球发货</td>
+                        <td class="description">按计划向Indiegogo支持者发货，产品迅速销往全球50多个国家和地区，建立初步的国际市场认知</td>
+                        <td class="reference"><a href="https://canvasbusinessmodel.com/blogs/brief-history/ringconn-brief-history" target="_blank">CanvasBusinessModel</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">2023年5月18日</td>
+                        <td><span class="category cat-partnership">官网上线</span></td>
+                        <td class="milestone">官方网站正式启动</td>
+                        <td class="description">RingConn.com官方网站正式上线，开始直接面向消费者销售。标志着从众筹模式转向常规零售模式</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-official-website-has-been-launched-on-5-18--301833266.html" target="_blank">PR Newswire官方新闻稿(2023-05-18)</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">2023年7月</td>
+                        <td><span class="category cat-feature">App更新</span></td>
+                        <td>App v1.5.0发布(iOS)</td>
+                        <td class="description">推出iOS小组件功能，用户无需打开App即可查看健康数据。Android小组件计划于1个月内发布</td>
+                        <td class="reference"><a href="https://deal.town/indiegogo/update-21-from-ringconn-smart-ring-smartest-wearable-for-you-FKJ492RBL" target="_blank">Indiegogo Update #21</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">2023年8月</td>
+                        <td><span class="category cat-feature">算法优化</span></td>
+                        <td>压力计算算法重大更新</td>
+                        <td class="description">推出改进的压力评估算法，更个性化和准确。新算法能区分不同场景（睡眠时显示放松，工作时显示正常/中等/高压力），解决了之前压力值偏高的问题</td>
+                        <td class="reference"><a href="https://gadgetsandwearables.com/2023/08/23/ringconn-software-update-firmware/" target="_blank">Gadgets &amp; Wearables(2023-08-23)</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2023年9月</td>
+                        <td><span class="category cat-exhibition">国际展会</span></td>
+                        <td>参展IFA 2023柏林</td>
+                        <td class="description">首次参加德国柏林国际电子消费品展览会(IFA 2023)，展示Gen 1产品。被Yanko Design评为"智能生活类前20设计"之一</td>
+                        <td class="reference"><a href="https://www.linkedin.com/company/ringconn" target="_blank">RingConn LinkedIn</a></td>
+                    </tr>
+                    <tr data-category="award" style="">
+                        <td class="date">2023年11月</td>
+                        <td><span class="category cat-award">行业荣誉</span></td>
+                        <td class="milestone">获Indiegogo双项大奖</td>
+                        <td class="description">在深圳举办的Indiegogo 2023 GOGO创新峰会暨颁奖典礼上荣获两项大奖：<br>
+                        • "时尚与可穿戴类年度最佳项目"<br>
+                        • "年度最佳新兴项目"<br>
+                        全球营销负责人Rucia Wang代表公司领奖并发表演讲</td>
+                        <td class="reference"><a href="https://www.linkedin.com/company/ringconn" target="_blank">RingConn LinkedIn官方公告</a>; <a href="https://musicphotolife.com/2024/05/ringconn-smart-ring-review/" target="_blank">Product Review</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2024年1月</td>
+                        <td><span class="category cat-exhibition">CES展会</span></td>
+                        <td class="milestone">CES 2024展示Gen 1</td>
+                        <td class="description">在拉斯维加斯消费电子展(CES 2024)上展示Gen 1及未来规划。吸引100+顶级媒体和影响者关注，获Forbes、ZDNet等30+全球媒体报道。宣布正在开发月经周期追踪和睡眠呼吸暂停监测功能，计划Q1-Q2测试。已提交FDA认证申请（脉搏血氧仪和睡眠呼吸暂停监测），预计年底获批</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-smart-ring-impresses-at-ces-2024-unveiling-plans-on-features-and-medical-algorithms-updates-that-redefine-personal-health-management-302034036.html" target="_blank">PR Newswire(2024-01-12)</a>; <a href="https://sleepreviewmag.com/sleep-diagnostics/consumer-sleep-tracking/wearable-sleep-trackers/ringconn-reveals-upcoming-sleep-apnea-monitoring-smart-ring/" target="_blank">Sleep Review Magazine</a></td>
+                    </tr>
+                    <tr data-category="certification" style="">
+                        <td class="date">2024年1月</td>
+                        <td><span class="category cat-certification">FDA认证</span></td>
+                        <td>提交FDA认证申请</td>
+                        <td class="description">向美国FDA提交两项功能的认证申请：<br>
+                        • 脉搏血氧仪(Pulse Oximeter)<br>
+                        • 阻塞性睡眠呼吸暂停综合征(OSAHS)监测<br>
+                        预计2024年底获得认证</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-smart-ring-impresses-at-ces-2024-unveiling-plans-on-features-and-medical-algorithms-updates-that-redefine-personal-health-management-302034036.html" target="_blank">PR Newswire(2024-01-12)</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">2024年5月</td>
+                        <td><span class="category cat-feature">功能发布</span></td>
+                        <td class="milestone">App v2.7.0重大更新</td>
+                        <td class="description">推出重要新功能：<br>
+                        • Period Forecasts（月经周期预测）- 基于体温和周期数据预测<br>
+                        • 室内跑步模式(Indoor Running)<br>
+                        • Insights页面和生命体征UI优化<br>
+                        用户可记录经期、出血量、疼痛强度等信息</td>
+                        <td class="reference"><a href="https://x.com/RingConn_/status/1793948414897762761" target="_blank">RingConn X官方账号</a></td>
+                    </tr>
+                    <tr data-category="product" style="">
+                        <td class="date">2024年8月1日</td>
+                        <td><span class="category cat-product">新品发布</span></td>
+                        <td class="milestone">Gen 2在Kickstarter发布</td>
+                        <td class="description">第二代产品Gen 2开启Kickstarter众筹，目标$50,000。革命性特点：<br>
+                        • 全球首款集成睡眠呼吸暂停监测的智能戒指<br>
+                        • 10-12天超长续航（配充电盒150+天）<br>
+                        • 2mm超薄设计，重量仅2-3克<br>
+                        • 比Gen 1薄23%、轻50%、窄12.8%<br>
+                        • 90.7%睡眠呼吸暂停检测准确率<br>
+                        • 早鸟价$209，零售价$299</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-launches-gen-2-smart-ring-pioneering-sleep-apnea-detection-with-unmatched-10---12-days-battery-life-302212578.html" target="_blank">PR Newswire(2024-08-01)</a>; <a href="https://ringconn.com/blogs/newsroom/ringconn-gen-2-smart-ring-pioneering-sleep-apnea-detection-with-unmatched-10-12-days-battery-life" target="_blank">RingConn官方博客</a></td>
+                    </tr>
+                    <tr data-category="milestone" style="">
+                        <td class="date">2024年8月1日</td>
+                        <td><span class="category cat-milestone">众筹记录</span></td>
+                        <td class="milestone">4小时筹集$100万</td>
+                        <td class="description">Gen 2 Kickstarter众筹创造多项记录：<br>
+                        • 30分钟：2,000+支持者，$50万<br>
+                        • 4小时：$100万（最快达到此金额的智能戒指项目，打破前记录35天）<br>
+                        • 36小时：超越Gen 1总筹款额<br>
+                        • 2天：达到$150万<br>
+                        • 40小时：超过$180万</td>
+                        <td class="reference"><a href="https://gadgetsandwearables.com/2024/08/04/ringconn-gen-2-kickstarter/" target="_blank">Gadgets &amp; Wearables(2024-08-04)</a>; <a href="https://ringconn.com/blogs/newsroom/ringconn-gen-2-smart-ring-pioneering-sleep-apnea-detection-with-unmatched-10-12-days-battery-life" target="_blank">RingConn官方博客</a></td>
+                    </tr>
+                    <tr data-category="funding" style="">
+                        <td class="date">2024年8月16日</td>
+                        <td><span class="category cat-funding">融资</span></td>
+                        <td class="milestone">获得天使轮投资</td>
+                        <td class="description">完成天使轮融资，投资方：<br>
+                        • 香港X-Tech Startup Platform（领投）<br>
+                        • 高炳强(Gao Bingqiang)<br>
+                        具体金额未披露</td>
+                        <td class="reference"><a href="https://tracxn.com/d/companies/ringconn/" target="_blank">Tracxn - RingConn融资信息</a>; <a href="https://canvasbusinessmodel.com/blogs/brief-history/ringconn-brief-history" target="_blank">CanvasBusinessModel</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2024年9月</td>
+                        <td><span class="category cat-exhibition">IFA 2024</span></td>
+                        <td class="milestone">Gen 2在IFA 2024亮相</td>
+                        <td class="description">在柏林国际电子消费品展览会(IFA 2024)首次公开展示Gen 2。获得媒体、行业领袖和消费者广泛关注。获得多项媒体奖项：<br>
+                        • TechRadar "Best of IFA 2024"<br>
+                        • SlashGear "Innovation Award"<br>
+                        • Gadgety Awards认可</td>
+                        <td class="reference"><a href="https://www.prnewswire.co.uk/news-releases/ringconn-showcases-gen-2-smart-ring-at-ifa-2024-revolutionizing-sleep-monitoring-with-integrated-sleep-apnea-detection-302243162.html" target="_blank">PR Newswire UK(2024-09-10)</a>; <a href="https://www.techradar.com/tech/best-of-ifa-2024" target="_blank">TechRadar</a>; <a href="https://www.slashgear.com/1660527/ringconn-gen-2-smart-ring-innovation-award-ifa-2024/" target="_blank">SlashGear</a></td>
+                    </tr>
+                    <tr data-category="funding" style="">
+                        <td class="date">2024年9月15日</td>
+                        <td><span class="category cat-funding">众筹完成</span></td>
+                        <td class="milestone">Kickstarter众筹创纪录结束</td>
+                        <td class="description">Gen 2 Kickstarter众筹圆满结束，最终成绩：<br>
+                        • 筹资金额：$4,415,966<br>
+                        • 支持者：18,428人<br>
+                        • 目标达成率：8,832%<br>
+                        创下可穿戴品类Kickstarter平台新纪录</td>
+                        <td class="reference"><a href="https://www.kickstarter.com/projects/2059923007/ringconn-gen-2-ultimate-lightness-12-days-battery" target="_blank">Kickstarter官方页面</a></td>
+                    </tr>
+                    <tr data-category="product" style="">
+                        <td class="date">2024年9-12月</td>
+                        <td><span class="category cat-product">产品交付</span></td>
+                        <td>Gen 2批量发货</td>
+                        <td class="description">按承诺时间表向Kickstarter支持者发货，从9月开始陆续交付至全球各地</td>
+                        <td class="reference"><a href="https://www.kickstarter.com/projects/2059923007/ringconn-gen-2-ultimate-lightness-12-days-battery" target="_blank">Kickstarter</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2024年10月24-26日</td>
+                        <td><span class="category cat-exhibition">学术活动</span></td>
+                        <td>赞助BioCAS 2024会议</td>
+                        <td class="description">作为赞助商参加西安举办的IEEE生物医学电路与系统会议(BioCAS 2024)，该会议庆祝20周年。<br>
+                        • Dr. Guoxing Wang在开幕式上发言，捐赠15枚Gen 2用于研发<br>
+                        • CEO Dr. Wu Hao介绍智能戒指在健康管理中的作用<br>
+                        • 获"最佳现场演示奖"(Best Live Demonstration Award)</td>
+                        <td class="reference"><a href="https://ringconn.com/blogs/newsroom/ringconn-shines-at-biocas-2024-celebrating-20-years-of-innovation-in-biomedical-circuits-and-systems" target="_blank">RingConn官方博客(2024-11-07)</a></td>
+                    </tr>
+                    <tr data-category="milestone" style="">
+                        <td class="date">2024年12月</td>
+                        <td><span class="category cat-milestone">用户里程碑</span></td>
+                        <td class="milestone">全球用户突破15万</td>
+                        <td class="description">到2024年底，RingConn在全球80个国家拥有超过150,000名用户，标志着从小众产品向主流市场的转变</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-takes-center-stage-at-ces-2025-with-innovative-wearables-gen-2-and-gen-2-air-302347780.html" target="_blank">PR Newswire(2025-01-10)</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2025年1月</td>
+                        <td><span class="category cat-exhibition">CES 2025</span></td>
+                        <td class="milestone">发布Gen 2和Gen 2 Air</td>
+                        <td class="description">在拉斯维加斯CES 2025上展示两款产品：<br>
+                        <strong>Gen 2</strong>：展示众筹成功产品<br>
+                        <strong>Gen 2 Air</strong>（首次发布）：<br>
+                        • 超薄设计，更时尚<br>
+                        • 7种戒指保护套颜色<br>
+                        • 9种盲盒指套颜色<br>
+                        • 定位"AI Health For All"理念<br>
+                        获得媒体和消费者广泛好评</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-takes-center-stage-at-ces-2025-with-innovative-wearables-gen-2-and-gen-2-air-302347780.html" target="_blank">PR Newswire(2025-01-10)</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">2025年4月</td>
+                        <td><span class="category cat-feature">功能升级</span></td>
+                        <td class="milestone">Period Forecasts重大升级</td>
+                        <td class="description">推出第一阶段的女性健康功能升级（Phase 1）：<br>
+                        • 全周期概览(Full-Cycle Overview)<br>
+                        • 基于体温的智能预测<br>
+                        • 98%周期预测准确率(±3天)<br>
+                        • ±0.1°C体温精度<br>
+                        • 由女性健康PhD领导的全女性团队开发<br>
+                        支持Gen 1、Gen 2和Gen 2 Air所有型号</td>
+                        <td class="reference"><a href="https://ringconn.com/blogs/news/major-upgrade-ringconn-s-period-forecasts-just-got-smarter" target="_blank">RingConn官方博客(2025-04-21)</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">2025年5月30日</td>
+                        <td><span class="category cat-partnership">零售扩张</span></td>
+                        <td class="milestone">入驻Target.com</td>
+                        <td class="description">与美国零售巨头Target达成战略合作，Gen 2及配件在Target.com上线销售。<br>
+                        <strong>Target概况</strong>：<br>
+                        • 全美1,950+家门店<br>
+                        • 美国最受信赖的零售品牌之一<br>
+                        • 行业领先的全渠道平台<br>
+                        标志着进入美国主流消费市场</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-smart-ring-with-sleep-apnea-monitoring-launches-at-targetcom-302469387.html" target="_blank">PR Newswire(2025-05-30)</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">2025年7月23日</td>
+                        <td><span class="category cat-partnership">零售扩张</span></td>
+                        <td class="milestone">入驻Walmart.com</td>
+                        <td class="description">与美国最大零售商Walmart建立合作，Gen 2在Walmart.com上线。<br>
+                        <strong>Walmart地位</strong>：<br>
+                        • 美国最大零售商<br>
+                        • 可穿戴设备重点投资领域<br>
+                        • 标志着零售渠道重大扩张<br>
+                        Walmart持续扩展健康可穿戴产品线，RingConn加入标志着其产品多元化战略</td>
+                        <td class="reference"><a href="https://finance.yahoo.com/news/ringconn-gen-2-now-available-170000938.html" target="_blank">Yahoo Finance(2025-07-23)</a>; <a href="https://ringconn.com/blogs/news/ringconn-gen-2-at-walmart" target="_blank">RingConn官方博客</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">2025年7月</td>
+                        <td><span class="category cat-feature">App更新</span></td>
+                        <td>App V3.9.0重大更新</td>
+                        <td class="description">推出多项新功能：<br>
+                        • 自定义健康目标设定工具<br>
+                        • <strong>RingConn Lab</strong>：用户可测试未来AI技术<br>
+                        • 更智能的周期预测<br>
+                        • 增强的健康数据管理功能</td>
+                        <td class="reference"><a href="https://ringconn.com/blogs/news/new-smart-ring-app-features" target="_blank">RingConn官方博客(2025-07-24)</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">2025年8月</td>
+                        <td><span class="category cat-partnership">促销活动</span></td>
+                        <td>Amazon Prime Day合作</td>
+                        <td class="description">参与Amazon Prime Day活动：<br>
+                        • Gen 2 Air：48小时内10%折扣<br>
+                        • Gen 2：全活动期5%折扣<br>
+                        • Gen 2组合套装：10%优惠<br>
+                        历史数据显示Prime Day是全年最大折扣期（历史最高达30%）</td>
+                        <td class="reference"><a href="https://ringconn.com/pages/ringconn-prime-day" target="_blank">RingConn Prime Day页面</a>; <a href="https://simplycodes.com/store/ringconn.com" target="_blank">SimplyCodes数据分析</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">2025年8月27日</td>
+                        <td><span class="category cat-partnership">零售扩张</span></td>
+                        <td class="milestone">入驻Best Buy.com</td>
+                        <td class="description">与美国领先消费电子零售商Best Buy达成合作，Gen 2在BestBuy.com上线。<br>
+                        <strong>Best Buy地位</strong>：<br>
+                        • 美国领先的消费电子零售商<br>
+                        • 全美1,000+家门店<br>
+                        • 可穿戴设备核心品类<br>
+                        • 精选创新技术产品<br>
+                        继Target、Walmart后的又一重要零售合作</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-gen-2-now-available-at-bestbuycom-expanding-access-to-health-innovation-302539866.html" target="_blank">PR Newswire(2025-08-27)</a></td>
+                    </tr>
+                    <tr data-category="milestone" style="">
+                        <td class="date">2025年8月</td>
+                        <td><span class="category cat-milestone">用户里程碑</span></td>
+                        <td class="milestone">全球用户超过25万</td>
+                        <td class="description">随着零售渠道持续扩张和产品不断创新，全球用户数突破250,000，覆盖80+国家</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-gen-2-now-available-at-bestbuycom-expanding-access-to-health-innovation-302539866.html" target="_blank">PR Newswire(2025-08-27)</a></td>
+                    </tr>
+                    <tr data-category="exhibition" style="">
+                        <td class="date">2025年9月5-9日</td>
+                        <td><span class="category cat-exhibition">IFA 2025</span></td>
+                        <td class="milestone">展示血压监测技术</td>
+                        <td class="description">在柏林IFA 2025首次公开展示<strong>Blood Pressure Insights</strong>（血压洞察）功能Demo。<br>
+                        <strong>技术特点</strong>：<br>
+                        • 每28天校准一次（使用传统血压计）<br>
+                        • 之后提供每日血压监测<br>
+                        • 可检测夜间高血压、白大褂高血压等<br>
+                        • 开放内测招募计划<br>
+                        <strong>背景</strong>：全球11亿高血压患者，仅不到20%得到有效控制(WHO数据)</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-showcases-blood-pressure-insights-demo-at-ifa-2025-302550724.html" target="_blank">PR Newswire(2025-09-09)</a>; <a href="https://ringconn.com/blogs/news/ringconn-showcases-blood-pressure-insights-demo-at-ifa-2025" target="_blank">RingConn官方博客(2025-09-08)</a></td>
+                    </tr>
+                    <tr data-category="certification" style="">
+                        <td class="date">持续进行中</td>
+                        <td><span class="category cat-certification">FDA认证</span></td>
+                        <td>FDA认证申请进行中</td>
+                        <td class="description">持续推进FDA认证申请工作：<br>
+                        • 脉搏血氧仪功能<br>
+                        • 睡眠呼吸暂停监测功能<br>
+                        自2024年1月提交申请以来持续跟进</td>
+                        <td class="reference"><a href="https://canvasbusinessmodel.com/blogs/brief-history/ringconn-brief-history" target="_blank">CanvasBusinessModel</a></td>
+                    </tr>
+                    <tr data-category="feature" style="">
+                        <td class="date">规划中</td>
+                        <td><span class="category cat-feature">未来功能</span></td>
+                        <td>持续功能开发</td>
+                        <td class="description">正在开发和计划推出的功能：<br>
+                        • 血压监测功能（2026年计划推出）<br>
+                        • 扩展运动模式支持<br>
+                        • 增强女性健康功能<br>
+                        • 更深度的AI驱动健康洞察<br>
+                        • 持续的软件和算法优化</td>
+                        <td class="reference"><a href="https://www.prnewswire.com/news-releases/ringconn-gen-2-now-available-at-bestbuycom-expanding-access-to-health-innovation-302539866.html" target="_blank">PR Newswire</a>; <a href="https://www.prnewswire.com/news-releases/ringconn-showcases-blood-pressure-insights-demo-at-ifa-2025-302550724.html" target="_blank">IFA 2025发布</a></td>
+                    </tr>
+                    <tr data-category="partnership" style="">
+                        <td class="date">持续运营中</td>
+                        <td><span class="category cat-partnership">销售渠道</span></td>
+                        <td>多渠道销售网络</td>
+                        <td class="description">当前主要销售渠道：<br>
+                        • RingConn.com官网（直营）<br>
+                        • Amazon.com（在线零售）<br>
+                        • Target.com（零售合作）<br>
+                        • Walmart.com（零售合作）<br>
+                        • BestBuy.com（零售合作）<br>
+                        覆盖北美、欧洲、亚洲等80+国家和地区</td>
+                        <td class="reference"><a href="https://www.amazon.com/RingConn-Monitoring-Subscription-Battery-Compatible/dp/B0DG2SYGF3" target="_blank">Amazon产品页</a>; <a href="https://ringconn.com/" target="_blank">RingConn官网</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+            <h3 style="margin-bottom: 10px;">📊 核心团队信息</h3>
+            <p style="line-height: 1.8; margin: 0;">
+                <strong>创始人兼董事长：</strong>Dr. Guoxing Wang - 前IEEE生物医学电路与系统学会副主席，上海交通大学教授，IEEE Transactions on Biomedical Circuits and Systems前主编<br>
+                <strong>CEO：</strong>Dr. Wu Hao (Tony) - 人工智能专家，联合创始人<br>
+                <strong>联合创始人：</strong>Dr. Feng - 医学博士<br>
+                <strong>全球营销负责人：</strong>Rucia Wang
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function filterCategory(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                if (category === 'all') {
+                    row.style.display = '';
+                } else {
+                    const rowCategory = row.getAttribute('data-category');
+                    row.style.display = rowCategory === category ? '' : 'none';
+                }
+            });
+        }
+
+        function exportToCSV() {
+            const table = document.getElementById('timeline-table');
+            let csv = [];
+            
+            // 添加BOM以支持中文
+            let bom = '\uFEFF';
+            
+            // 获取表头
+            const headers = [];
+            const headerCells = table.querySelectorAll('thead th');
+            headerCells.forEach(cell => {
+                headers.push(cell.textContent);
+            });
+            csv.push(headers.join(','));
+            
+            // 获取表格数据
+            const rows = table.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const rowData = [];
+                const cells = row.querySelectorAll('td');
+                cells.forEach(cell => {
+                    // 移除HTML标签，提取纯文本，移除多余空白
+                    let text = cell.textContent
+                        .replace(/\n/g, ' ')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+                    // 如果包含逗号或引号，用引号包裹
+                    if (text.includes(',') || text.includes('"') || text.includes('\n')) {
+                        text = '"' + text.replace(/"/g, '""') + '"';
+                    }
+                    rowData.push(text);
+                });
+                csv.push(rowData.join(','));
+            });
+            
+            // 创建Blob并下载
+            const csvContent = bom + csv.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            
+            const today = new Date();
+            const dateStr = today.toISOString().split('T')[0];
+            
+            link.setAttribute('href', url);
+            link.setAttribute('download', `RingConn完整发展历程_${dateStr}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // 页面加载时显示统计动画
+        window.addEventListener('load', () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                stat.style.opacity = '0';
+                setTimeout(() => {
+                    stat.style.transition = 'opacity 0.5s';
+                    stat.style.opacity = '1';
+                }, 100);
+            });
+        });
+    </script>
+
+</body></html>
